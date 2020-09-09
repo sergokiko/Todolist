@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'lesson1';
+  newTodo:string = ''
+todoList: Array<string> = ['Go to meet clienе', 'visit Mum', 'Have dinner with wife']
+
+  addTodo() {
+    this.todoList.push(this.newTodo)
+    this.newTodo = ''
+  }
+
+  deleteTodo(todo: string) {
+    this.todoList = this.todoList.filter(el => el !== todo)
+  }
 }
